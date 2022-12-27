@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        #footer-1 {
+            background-color: blanchedalmond;
+        }
+    </style>
     <title>Edit</title>
 </head>
+
 <body>
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>ATN shop</h1>
+    </div>
     <h1 style="color: ;green">Edit product</h1>
     <form action="/edit" method="post">
-    <input type="hidden" name="id" value="{{product._id}}">
-        Product Name <input type="text" name="txtName" value="{{product.name}}">
-            <br>
-            Price   <input type="text" name="txtPrice" value="{{product.price}}">
-            <br>
-            Picture URL<input type="text" name="txtPic" value="{{product.picture}}">
-            <br> 
-        <input type="submit" value="Update Product" style="color: orange;">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>New Product</h1>
+                    <form action="/new" method="post">
+                        <div class="container mt-3">
+                            <form action="/action_page.php">
+                                <div class="mb-3 mt-3">
+                                    <label>Product name:</label>
+                                    <input type="hidden" name="id" value="{{product._id}}">
+                                    <input type="text" name="txtName" class="form-control" value="{{product.name}}" required>
+                                </div>
+                                <br>
+                                <div class="mb-3">
+                                    <label>Price:</label>
+                                    <input type="text" name="txtPrice" class="form-control" required>
+                                </div>
+                                <br>
+                                <div class="mb-3">
+                                    <label>Picture URL:</label>
+                                    <input type="text" name="txtPic" class="form-control" required>
+                                </div>
+                                <br>
+                                <div class="mb-3">
+                                    <label>Type:</label>
+                                    <input type="text" name="txtType" class="form-control" required>
+                                </div>
+                        </div>
+                        <br>
+                        <div class="mb-3">
+                            <button><input type="submit" value="Create a new product"
+                                    style="background-color: yellow;"></button>
+                        </div>
+                    </form>
+                </div>
+    </form>
+    </div>
+    </div>
     </form>
 </body>
+
 </html>

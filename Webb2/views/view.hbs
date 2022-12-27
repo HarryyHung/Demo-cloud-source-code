@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View all products</title>
+    <title>Toy store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        #footer-1 {
+            background-color: blanchedalmond;
+        }
+    </style>
 </head>
+
 <body>
+    <div class="container-fluid p-5 bg-primary text-white text-center">
+        <h1>ATN shop</h1>
+    </div>
+    <h1 class=""></h1>
+    <ul class="nav nav-pills">
+        <li><a href="/">Home</a></li>
+        <li><a href="/new">New Product</a></li>
+        <li><a href="/view">View all</a></li>
+    </ul>
     <h1>View all products</h1>
     <form action="/search" method="post">
-    Name <input type="text" name="search">
-    <input type="submit" value="Search">
+        Name <input type="text" name="search">
+        <input type="submit" value="Search">
     </form>
-    <ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Picture URL</th>
+                <th>Type</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
         {{#each results}}
-            <li>{{name}}
-                <br>
-                <img src="{{pictureURL}}" width="150" height="100"/>
-                <br>
-                <a href="/delete?id={{_id}}" onclick="return confirm('Are you nut?')">Delete</a>
-                <br>
-                <a href="/Edit?id={{_id}}">Edit</a>
-            </li>
+        <tbody>
+            <tr>
+                <td>{{name}}</td>
+                <td>{{price}}</td>
+                <td><img src="{{pictureURL}}" width="150" height="100"></td>
+                <td>{{type}}</td>
+                <td><a href="/Edit?id={{_id}}">Edit</a></td>
+                <td><a href="/delete?id={{_id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
+            </tr>
+        </tbody>
         {{/each}}
-    </ul>
-    
+    </table>
 </body>
+
+<footer id="footer-1" class="footer-fluid">
+    <p style="text-align: center;">Thank you</p>
+</footer>
+
 </html>

@@ -16,7 +16,7 @@
 
 <body>
     <div class="container-fluid p-5 bg-primary text-white text-center">
-        <h1>Toy store</h1>
+        <h1>ATN shop</h1>
     </div>
     <h1 class=""></h1>
     <ul class="nav nav-pills">
@@ -30,21 +30,26 @@
                 <h1>New Product</h1>
                 <form action="/new" method="post">
                     <div class="container mt-3">
-                        <h2>Stacked form</h2>
                         <form action="/action_page.php">
                             <div class="mb-3 mt-3">
                                 <label>Product name:</label>
-                                <input type="text" name="txtName">
+                                <input type="text" name="txtName" class="form-control" required> 
+                                <label style="color: red;">{{results.nameError}}</label>
                             </div>
                             <br>
                             <div class="mb-3">
                                 <label>Price:</label>
-                                <input type="text" name="txtPrice">
+                                <input type="text" name="txtPrice" class="form-control" required>
                             </div>
                             <br>
                             <div class="mb-3">
                                 <label>Picture URL:</label>
-                                <input type="text" name="txtPic">
+                                <input type="text" name="txtPic" class="form-control" required>
+                            </div>
+                            <br>
+                            <div class="mb-3">
+                                <label>Type:</label>
+                                <input type="text" name="txtType" class="form-control" required>
                             </div>
                     </div>
                     <br>
