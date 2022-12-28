@@ -7,6 +7,12 @@ var app = express()
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
 
+const hbs = require('hbs')
+hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
+
 
 app.post('/search', async (req, res) => {
     const search = req.body.search

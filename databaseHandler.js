@@ -19,11 +19,11 @@ async function deleteProductById(id) {
     let db = client.db("GCH1002")
     await db.collection("products").deleteOne({ _id: ObjectId(id) })
 }
-async function updateProduct(id, name, price, picture) {
+async function updateProduct(id, name, price, picture, type) {
     let client = await MongoClient.connect(url)
     let db = client.db("GCH1002")
     await db.collection("products").updateOne({ _id: ObjectId(id) },
-        { $set: { "name": name, "price": price, "pictureURL": picture } })
+        { $set: { "name": name, "price": price, "pictureURL": picture, "type": type } })
 }
 async function findProductById(id) {
     let client = await MongoClient.connect(url)

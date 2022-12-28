@@ -49,8 +49,16 @@
                             </div>
                             <br>
                             <div class="mb-3">
-                                <label>Type:</label>
-                                <input type="text" name="txtType" class="form-control" required>
+                                {{!-- <label>Type:</label>
+                                <input type="text" name="txtType" class="form-control" required> --}}
+                                <label for="types">Type:</label>
+
+                                <select name="txtType" id="types" class="form-control" required>
+                                    <option value=""></option>
+                                    <option value="STEAM">STEAM</option>
+                                    <option value="LEGO">LEGO</option>
+                                    <option value="ROBOT">ROBOT</option>
+                                </select>
                             </div>
                     </div>
                     <br>

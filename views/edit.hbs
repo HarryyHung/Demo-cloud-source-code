@@ -45,8 +45,14 @@
                                 </div>
                                 <br>
                                 <div class="mb-3">
-                                    <label>Type:</label>
-                                    <input type="text" name="txtType" class="form-control" value="{{product.type}}" required>
+                                    {{!-- <label>Type:</label>
+                                    <input type="text" name="txtType" class="form-control" value="{{product.type}}" required> --}}
+                                    <select name="txtType" class="form-control" value="{{product.type}}">
+                                    <option value=""></option>
+                                    <option value="STEAM" {{#ifEquals product.type 'STEAM'}} selected {{/ifEquals}}>STEAM</option>
+                                    <option value="LEGO" {{#ifEquals product.type 'LEGO'}} selected {{/ifEquals}}>LEGO</option>
+                                    <option value="ROBOT" {{#ifEquals product.type 'ROBOT'}} selected {{/ifEquals}}>ROBOT</option>
+                                </select>
                                 </div>
                         </div>
                         <br>
