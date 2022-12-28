@@ -55,7 +55,7 @@ app.post('/new', async (req, res) => {
     }
     if (name.length > 22) {
         let resultError = {
-            nameError: 'You must enter name has length < 35!',
+            nameError: 'You must enter name has length < 22!',
         };
         res.render('newProduct', {  results: resultError });
     }
