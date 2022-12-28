@@ -61,7 +61,7 @@ app.post('/new', async (req, res) => {
     }
     else if (isNaN(price)) {
         let resultError1 = {
-            price: "Enter number"
+            priceError: "Enter number"
         };
         res.render('newProduct', { results: resultError1 });
     }
