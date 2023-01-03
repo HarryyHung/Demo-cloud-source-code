@@ -44,9 +44,22 @@
         <tbody>
             <tr>
                 <td>{{name}}</td>
-                <td>{{price}}</td>
+                {{!-- <td>{{price}}</td> --}}
+                {{#if (priceColor price)}}
+                <td style="color: red;">{{price}}</td>
+                {{else}}
+                <td style="color: blue;">{{price}}</td>
+                {{/if}}
                 <td><img src="{{pictureURL}}" width="150" height="100"></td>
-                <td>{{type}}</td>
+                {{!-- <td>{{type}}</td> --}}
+                {{!-- <td {{#when type 'eq' "ROBOT" }}style="color: blue " {{/when}}>{{type}}</td> --}}
+                {{!-- <td {{#ifEquals type "ROBOT" }}style="color: red " {{/ifEquals}}>{{type}}</td> --}}
+                {{#if (typeColor type)}}
+                <td style="color: red;">{{type}}</td>
+                {{else}}
+                <td style="color: blue;">{{type}}</td>
+                {{/if}}
+
                 <td><a href="/Edit?id={{_id}}">Edit</a></td>
                 <td><a href="/delete?id={{_id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
             </tr>
@@ -57,9 +70,9 @@
 
 <footer id="footer-1" class="footer-fluid">
     <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright:
-    <p>HungBDGCH200680@fpt.edu.vn</p>
-    <p style="text-align: center;">Thank you</p>
+        © 2020 Copyright:
+        <p>HungBDGCH200680@fpt.edu.vn</p>
+        <p style="text-align: center;">Thank you</p>
 </footer>
 
 </html>

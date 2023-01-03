@@ -6,14 +6,22 @@ var app = express()
 
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
-
+//////////
 const hbs = require('hbs')
 hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
+hbs.registerHelper("typeColor", function(type)
+{
+    return type == "ROBOT";
+});
 
-
+hbs.registerHelper("priceColor", function(price)
+{
+    return price > 100;
+});
+///////
 app.post('/search', async (req, res) => {
     const search = req.body.search
     const results = await searchProductByName(search)
@@ -70,6 +78,9 @@ app.post('/new', async (req, res) => {
             priceError: "Enter number"
         };
         res.render('newProduct', { results: resultError1 });
+    }
+    else if (type == "LEGO") {
+        let color = 'red';
     }
     else {
         let newId = await insertProduct(newProduct)

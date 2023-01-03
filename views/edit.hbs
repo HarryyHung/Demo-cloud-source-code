@@ -19,19 +19,19 @@
     <div class="container-fluid p-5 bg-primary text-white text-center">
         <h1>ATN shop</h1>
     </div>
-    <h1 style="color: ;green">Edit product</h1>
+    <h1 style="color: ;green">Update product</h1>
     <form action="/edit" method="post">
         <div class="container mt-5">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1>New Product</h1>
                     <form action="/new" method="post">
                         <div class="container mt-3">
                             <form action="/action_page.php">
                                 <div class="mb-3 mt-3">
                                     <label>Product name:</label>
                                     <input type="hidden" name="id" value="{{product._id}}">
-                                    <input type="text" name="txtName" class="form-control" value="{{product.name}}" required>
+                                    <input type="text" name="txtName" class="form-control" value="{{product.name}}"
+                                        required>
                                 </div>
                                 <br>
                                 <div class="mb-3">
@@ -41,24 +41,31 @@
                                 <br>
                                 <div class="mb-3">
                                     <label>Picture URL:</label>
-                                    <input type="text" name="txtPic" class="form-control" value="{{product.pictureURL}}" required>
+                                    <input type="text" name="txtPic" class="form-control" value="{{product.pictureURL}}"
+                                        required>
                                 </div>
                                 <br>
                                 <div class="mb-3">
                                     {{!-- <label>Type:</label>
-                                    <input type="text" name="txtType" class="form-control" value="{{product.type}}" required> --}}
+                                    <input type="text" name="txtType" class="form-control" value="{{product.type}}"
+                                        required> --}}
                                     <select name="txtType" class="form-control" value="{{product.type}}">
-                                    <option value=""></option>
-                                    <option value="STEAM" {{#ifEquals product.type 'STEAM'}} selected {{/ifEquals}}>STEAM</option>
-                                    <option value="LEGO" {{#ifEquals product.type 'LEGO'}} selected {{/ifEquals}}>LEGO</option>
-                                    <option value="ROBOT" {{#ifEquals product.type 'ROBOT'}} selected {{/ifEquals}}>ROBOT</option>
-                                </select>
+                                        <option value=""></option>
+                                        <option value="STEAM" {{#ifEquals product.type 'STEAM' }} selected
+                                            {{/ifEquals}}>STEAM</option>
+                                        <option value="LEGO" {{#ifEquals product.type 'LEGO' }} selected {{/ifEquals}}>
+                                            LEGO</option>
+                                        <option value="ROBOT" {{#ifEquals product.type 'ROBOT' }} selected
+                                            {{/ifEquals}}>ROBOT</option>
+                                    </select>
                                 </div>
                         </div>
                         <br>
-                        <div class="mb-3">
-                            <button><input type="submit" value="Create a new product"
-                                    style="background-color: yellow;"></button>
+                        <div class="mb-3 text-center">
+                            <button>
+                                <input type="submit" value="Edit"
+                                    style="background-color: yellow;">
+                            </button>
                         </div>
                     </form>
                 </div>
